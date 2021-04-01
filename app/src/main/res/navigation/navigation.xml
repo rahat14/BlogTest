@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/blogListFragment">
+
+    <fragment
+        android:id="@+id/blogListFragment"
+        tools:layout="@layout/fragment_blog_list"
+        android:name="com.rahat.blog_test.view.blogs.BlogListFragment"
+        android:label="BlogListFragment" >
+        <action
+            android:id="@+id/action_blogListFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+        <action
+            android:id="@+id/action_blogListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+        tools:layout="@layout/fragment_add_edit_blog"
+        android:id="@+id/addEditFragment"
+        android:name="com.rahat.blog_test.view.add_edit_blog.AddEditFragment"
+        android:label="AddEditFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.rahat.blog_test.view.blog_detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+    </fragment>
+
+</navigation>
